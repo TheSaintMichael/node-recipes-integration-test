@@ -89,7 +89,7 @@ describe('Recipes', function() {
 
     return chai.request(app)
 
-      // first, we have to GET so we have an idea of object to update.
+   // first, we have to GET so we have an idea of object to update.
       .get('/Recipes')
       .then(function(res) {
         updateData.id = res.body[0].id;
@@ -98,9 +98,21 @@ describe('Recipes', function() {
           .put(`/Recipes/${updateData.id}`)
           .send(updateData);
       })
+
       // prove that the PUT request has right status code
       // and returns updated item
       .then(function(res) {
+
+        res.should.have.status(200); //Return status 200
+        res.should.be.json; //Return JSON string
+        res.body.should.be.a('object'); //Return Object
+        res.body.should.deep.equal(updateData); //Dummy Data 'UpdateData'
+
+        // Does the body contain an id, name, ingredient?
+        res.body.should.include.keys('id', 'name', 'ingredients');
+
+        //Does the body have an id?
+        res.body.id.should.equal(updateData.id);
 
       });
   });
