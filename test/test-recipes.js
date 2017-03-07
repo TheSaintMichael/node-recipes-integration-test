@@ -62,14 +62,15 @@ describe('Recipes', function() {
   //  2. inspect response object and prove it has right
   //  status code and that the returned object has an `id`
   it('should add an item on POST', function() {
-    const recipeTest = name: 'Sandwich', ingredients: ['White Bread', 'Tomato', 'pinch of salt', 'Protein']};
+     const recipeTest = {
+        name: 'coffee', ingredients: ['ground coffee', 'hot water']};
     return chai.request(app)
       .post('/recipes')
       .send(recipeTest)
       .then(function(res) {
         res.should.have.status(201);
         res.should.be.json;
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         res.body.should.include.keys('name', 'id', 'ingredients');
         res.body.id.should.not.be.null;
         // response should be deep equal to `recipeTest` from above if we assign
@@ -84,7 +85,7 @@ describe('Recipes', function() {
     // we can make a second, PUT call to the app.
     const updateData = {
       name: 'foo',
-      ingredients: ['bar'];
+      ingredients: ['bar']
     };
 
     return chai.request(app)
