@@ -67,7 +67,11 @@ describe('Recipes', function() {
       .post('/Recipes')
       .send(recipeTest)
       .then(function(res) {
-
+        res.should.have.status(201);
+        res.should.be.json;
+        res.body.should.be.a('array');
+        res.body.should.include.keys('name', 'id', 'ingredients');
+        res.body.id.should.not.be.null;
         // response should be deep equal to `recipeTest` from above if we assign
         // `id` to it from `res.body.id`
         res.body.should.deep.equal(Object.assign(recipeTest, {id: res.body.id}));
