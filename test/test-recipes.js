@@ -64,7 +64,7 @@ describe('Recipes', function() {
   it('should add an item on POST', function() {
     const recipeTest = name: 'Sandwich', ingredients: ['White Bread', 'Tomato', 'pinch of salt', 'Protein']};
     return chai.request(app)
-      .post('/Recipes')
+      .post('/recipes')
       .send(recipeTest)
       .then(function(res) {
         res.should.have.status(201);
@@ -90,12 +90,12 @@ describe('Recipes', function() {
     return chai.request(app)
 
    // first, we have to GET so we have an idea of object to update.
-      .get('/Recipes')
+      .get('/recipes')
       .then(function(res) {
         updateData.id = res.body[0].id;
 
         return chai.request(app)
-          .put(`/Recipes/${updateData.id}`)
+          .put(`/recipes/${updateData.id}`)
           .send(updateData);
       })
 
@@ -125,10 +125,10 @@ describe('Recipes', function() {
     return chai.request(app)
       // first have to get so we have an `id` of item
       // to delete
-      .get('/Recipes')
+      .get('/recipes')
       .then(function(res) {
         return chai.request(app)
-          .delete(`/Recipes/${res.body[0].id}`);
+          .delete(`/recipes/${res.body[0].id}`);
       })
       .then(function(res) {
         res.should.have.status(204);
