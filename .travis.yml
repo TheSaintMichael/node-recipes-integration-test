@@ -4,6 +4,6 @@ deploy:
   provider: heroku
   api_key:
     secure: A7GVijagsadl0VbLb8yXMBZn6P6ZUCUtwkV3zXx7D38O09eNaUIjnP0W4qH+od2Z7vxbUg0Xs/3wQu+GClf9nyT87ASjwIGkl8asVRYWeqwUF0OgdVqw1omSpwn/3jnlTuMBd6xm2k1EqI1odSAe7GifHejphpZuSoXGHVHDhlZoo4PzAu2wDNTdQmB2iV5mLqE+IpJ94PB/eD1Hz712+VrK5i+e05uw/XaspoZE8RgVINwDtqmLxC5Z37kB70t+dAbt0EujiuZzdRjVH4+sn6Kh9OxIPHE8ouYAYTVKfHo69fM7jYoUlKAWHS4AjGyqyh9zZx/9jmrm1gRWi/hsT6LAYtBsEjqnGawsJ8y4uc6mrTa9yTG5JCXH6u4lexrJIYWQcW3T9IJEqFuJGY06HTKPpgZzo1S3f0djLY6JUP5MzDkCABraGIgRCVZRR9GiG3vqsxfsqDIBRQyWdplxp+n+dsP/dn7DJvlFvXgRf4s5ZGjbhl4NteglgUsq2hWNuATqdmWdjsPDQzwbJFBqG1epLwCHidWPTT+AfJ03EvtksAYd/zKp721FDEOKg7J5/SIq7f05qneGfl9i0nwlz5WeUjEBdrMAb0/UyA7HyGim57YcJsVSUGPZ3Bso5YGgCpDUpWLTlTPhcooN7z1ZAciiWdaRKcz2qsJ+gDH0weA=
-  app: mysterious-mesa-60142.git
+  app: mysterious-mesa-60142
   on:
     repo: TheSaintMichael/node-recipes-integration-test
