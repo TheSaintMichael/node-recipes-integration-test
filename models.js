@@ -15,7 +15,7 @@ function StorageException(message) {
   this.message = message;
   this.name = "StorageException";
 }
-
+//Shopping List
 const ShoppingList = {
   create: function(name, checked) {
     console.log('Creating new shopping list item');
